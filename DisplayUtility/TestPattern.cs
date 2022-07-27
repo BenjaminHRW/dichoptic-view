@@ -27,7 +27,7 @@ namespace RejTech
 
         // Motion test;
         private Object thisLock = new Object();
-        private const int DEFAULT_FRAME_STEP = -4;
+        private const int DEFAULT_FRAME_STEP = -4; //Interesting to change
         private Counter frames = new Counter();
         private int frameStep = DEFAULT_FRAME_STEP;
         private int posX = 0;
@@ -166,10 +166,13 @@ namespace RejTech
             testGraphics.ApplyChanges();
         }
 
-        private void UpdateFrameStep(double refresh)
+        private void UpdateFrameStep(double refresh) 
         {
             frameStep = ((int)(testGraphics.BufferWidth / 2 / refresh)) & 0xFFFE;
             frames.Clear();
+            Console.WriteLine("changed framestep to " + frameStep);
+
+
         }
 
         /// <summary>

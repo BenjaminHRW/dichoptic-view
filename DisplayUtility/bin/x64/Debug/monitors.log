@@ -838,3 +838,87 @@ PHYSICAL MONITOR (2):
   Is Rotated = False
   Is Primary = False
 
+PHYSICAL MONITOR (1):
+  Name = 22V2WG5
+  Product ID = AOC2202
+  Device Name = \\.\DISPLAY1
+  Device Path = \\?\DISPLAY#AOC2202#5&14c69a7c&1&UID265#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+  Video Output = HDMI
+  Width = 1920
+  Height = 1080
+  Color Depth = 32
+  Horiz Active = 1920
+  Vert Active = 1080
+  Horiz Total = 2200
+  Vert Total = 1125
+  Refresh Rate = 60
+  Horiz Scan Rate = 67500
+  Pixel Clock = 148500000
+  Is GPU Scaled = False
+  Is Interlaced = False
+  Is Rotated = False
+  Is Primary = False
+
+PHYSICAL MONITOR (2):
+  Name = VG240Y V
+  Product ID = ACR075A
+  Device Name = \\.\DISPLAY2
+  Device Path = \\?\DISPLAY#ACR075A#5&14c69a7c&1&UID264#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+  Video Output = HDMI
+  Width = 1920
+  Height = 1080
+  Color Depth = 32
+  Horiz Active = 1920
+  Vert Active = 1080
+  Horiz Total = 2080
+  Vert Total = 1110
+  Refresh Rate = 165
+  Horiz Scan Rate = 183153.846153846
+  Pixel Clock = 380960000
+  Is GPU Scaled = False
+  Is Interlaced = False
+  Is Rotated = False
+  Is Primary = False
+
+PHYSICAL MONITOR (1):
+  Name = 22V2WG5
+  Product ID = AOC2202
+  Device Name = \\.\DISPLAY1
+  Device Path = \\?\DISPLAY#AOC2202#5&14c69a7c&1&UID265#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+  Video Output = HDMI
+  Width = 1920
+  Height = 1080
+  Color Depth = 32
+  Horiz Active = 1920
+  Vert Active = 1080
+  Horiz Total = 2200
+  Vert Total = 1125
+  Refresh Rate = 60
+  Horiz Scan Rate = 67500
+  Pixel Clock = 148500000
+  Is GPU Scaled = False
+  Is Interlaced = False
+  Is Rotated = False
+  Is Primary = False
+
+PHYSICAL MONITOR (2):
+  Name = VG240Y V
+  Product ID = ACR075A
+  Device Name = \\.\DISPLAY2
+  Device Path = \\?\DISPLAY#ACR075A#5&14c69a7c&1&UID264#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+  Video Output = HDMI
+  Width = 1920
+  Height = 1080
+  Color Depth = 32
+  Horiz Active = 1920
+  Vert Active = 1080
+  Horiz Total = 2080
+  Vert Total = 1110
+  Refresh Rate = 165
+  Horiz Scan Rate = 183153.846153846
+  Pixel Clock = 380960000
+  Is GPU Scaled = False
+  Is Interlaced = False
+  Is Rotated = False
+  Is Primary = False
+

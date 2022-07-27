@@ -30,3 +30,35 @@ C:\Users\Jim\Desktop\Eye Tracking Files\James Ye Development Folder\Software Stu
 C:\Users\Jim\Desktop\Eye Tracking Files\James Ye Development Folder\Software Stuff\Dichoptic View Module - source code and history\DisplayUtility\DisplayUtility\obj\x64\Debug\DisplayUtility.csproj.CopyComplete
 C:\Users\Jim\Desktop\Eye Tracking Files\James Ye Development Folder\Software Stuff\Dichoptic View Module - source code and history\DisplayUtility\DisplayUtility\obj\x64\Debug\DisplayUtility.exe
 C:\Users\Jim\Desktop\Eye Tracking Files\James Ye Development Folder\Software Stuff\Dichoptic View Module - source code and history\DisplayUtility\DisplayUtility\obj\x64\Debug\DisplayUtility.pdb
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\DisplayUtility.exe.config
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\DisplayUtility.exe
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\DisplayUtility.pdb
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\MonoGame.Framework.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct2D1.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct3D11.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct3D9.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.DXGI.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Mathematics.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.XAudio2.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.XInput.dll
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\MonoGame.Framework.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct2D1.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct3D11.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Direct3D9.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.DXGI.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.Mathematics.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.XAudio2.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\bin\x64\Debug\SharpDX.XInput.xml
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.csproj.AssemblyReference.cache
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\RejTech.MainUtilityForm.resources
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\RejTech.StartupForm.resources
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\RejTech.Properties.Resources.resources
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.csproj.GenerateResource.cache
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.csproj.CoreCompileInputs.cache
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.csproj.CopyComplete
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.exe
+C:\Users\Jim\Documents\GitHub\dichoptic-view\DisplayUtility\obj\x64\Debug\DisplayUtility.pdb

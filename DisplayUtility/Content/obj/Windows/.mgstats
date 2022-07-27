@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Dropbox/Projects/Clients/OakvilleVision/DisplayUtility/DisplayUtility/Content/MainText.spritefont","C:/Dropbox/Projects/Clients/OakvilleVision/DisplayUtility/DisplayUtility/Content/bin/Windows/MainText.xnb","FontDescriptionProcessor","SpriteFontContent",2007,9601,0.1077983
+"C:/Dropbox/Projects/Clients/OakvilleVision/DisplayUtility/DisplayUtility/Content/testpattern1.png","C:/Dropbox/Projects/Clients/OakvilleVision/DisplayUtility/DisplayUtility/Content/bin/Windows/testpattern1.xnb","TextureProcessor","Texture2DContent",70461,72750,0.2910079

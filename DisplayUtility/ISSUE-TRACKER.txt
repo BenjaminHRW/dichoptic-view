@@ -1,0 +1,9 @@
+﻿Known Developer Issues:
+
+- Tested in Visual Studio 2019.  Not yet tested in Visual Studio 2022 but probably 100% works
+- Currently compatible with MonoGame 3.8.0.1641 from https://community.monogame.net/t/monogame-3-8/13312 ... Other versions are untested.
+- If you are using a multimonitor system with differnt DPI configured on different displays, test may not scale correctly on non-primary displays.  Test will DPI-scale to the DPI of the primary.
+- If you are using a surround-monitor system, test may not show correctly
+- When rebuilding in Monogame Pipeline (Open Content.mgcb for adding new assets and then rebuilding), make sure main build copies .\Content\bin\Windows\*.* to the Content subfolder of where executable is (e.g. ".\bin\x64\Release\Content")
+- Embedded .xnb in resources of exe is not working properly under MonoGame 3.8; needs a debug if you don't want a "Resources" subfolder.
+- If you launch in debug mode and debugging does not work, verify you weren't already running a release version in the System Tray (or ran without debug).  Right click and exit it before you begin debugging.

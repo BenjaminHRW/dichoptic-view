@@ -259,7 +259,7 @@ namespace RejTech
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected void Update(TimeSpan totalGameTime, TimeSpan elapsedGameTime)
         {
-            Console.WriteLine("Called Updated");
+            Console.WriteLine("Called Update");
             if (testGraphics == null)
             {
                 return;
@@ -314,8 +314,8 @@ namespace RejTech
                 UpdateFrameStep(currentFrameRate);
             }
 
-            posX += frameStep;
-            while (posX > 0) posX -= background.Width;
+            posX -= frameStep; //+=
+            while (posX < 0) posX += background.Width; //posX > 0 posX -= 
         }
 
         /// <summary>This is called when the game should draw itself.</summary>

@@ -349,6 +349,7 @@ namespace RejTech
                 textStats.WriteLine(displayLine);
                 textStats.SetPosition(new Vector2(currentDisplay.Width - 120, 60));
                 textStats.WriteLine(String.Format("{0:0} fps", currentFrameRate));
+                textStats.WriteLine(String.Format("{0:0} framestep", frameStep));
             }
 
             testGraphics.EndDraw();

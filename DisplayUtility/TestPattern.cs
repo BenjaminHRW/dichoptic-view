@@ -27,7 +27,7 @@ namespace RejTech
 
         // Motion test;
         private Object thisLock = new Object();
-        private const int DEFAULT_FRAME_STEP = -4; //Interesting to change
+        private const int DEFAULT_FRAME_STEP = 4; //Interesting to change
         private Counter frames = new Counter();
         private int frameStep = DEFAULT_FRAME_STEP;
         private int posX = 0;
@@ -226,7 +226,7 @@ namespace RejTech
         {
             try
             {
-                background = new Drawing.Image(testGraphics, "testpatternR");
+                background = new Drawing.Image(testGraphics, "testpatternwall");
                 font = new Drawing.Font(testGraphics, "MainText");
                 textStats = new Drawing.TextFormatter(testGraphics, font, new Vector2(60, 60), Color.White);
                 Console.WriteLine("loaded test pattern");
@@ -259,6 +259,7 @@ namespace RejTech
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected void Update(TimeSpan totalGameTime, TimeSpan elapsedGameTime)
         {
+            Console.WriteLine("Called Updated");
             if (testGraphics == null)
             {
                 return;
@@ -266,6 +267,7 @@ namespace RejTech
             else if ((parentHandle != IntPtr.Zero) && !Window.Exists(parentHandle))
             {
                 // If our parent window is gone, we'll terminate this thread.
+                //Console.WriteLine("Exited");
                 testGraphics.Exit();
             }
             else if (testGraphics.IsFocussed)
@@ -313,7 +315,7 @@ namespace RejTech
             }
 
             posX += frameStep;
-            while (posX > 0) posX += background.Width;
+            while (posX > 0) posX -= background.Width;
         }
 
         /// <summary>This is called when the game should draw itself.</summary>

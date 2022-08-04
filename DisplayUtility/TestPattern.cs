@@ -23,7 +23,9 @@ namespace RejTech
         private Drawing.Graphics testGraphics;
         private Drawing.Font font;
         private Drawing.Image background;
+        private Drawing.Image background2;
         private Drawing.TextFormatter textStats;
+        private bool alternate = true;
 
         // Motion test;
         private Object thisLock = new Object();
@@ -226,7 +228,8 @@ namespace RejTech
         {
             try
             {
-                background = new Drawing.Image(testGraphics, "testpatternwall");
+                background = new Drawing.Image(testGraphics, "testpatternwall"); //seems like it matters that testpatternwall has to be "background", I think this is because of the slight difference in dimension
+                background2 = new Drawing.Image(testGraphics, "testpatternR");
                 font = new Drawing.Font(testGraphics, "MainText");
                 textStats = new Drawing.TextFormatter(testGraphics, font, new Vector2(60, 60), Color.White);
                 Console.WriteLine("loaded test pattern");
@@ -330,9 +333,23 @@ namespace RejTech
 
             for (int x = posX; x < testGraphics.BufferWidth; x += background.Width)
             {
+                
                 for (int y = 0; y < testGraphics.BufferHeight; y += background.Height)
                 {
-                    background.DrawImage(new Rectangle(x, y, background.Width, background.Height));
+                    
+                    if (alternate)
+                    {
+                       
+                        background.DrawImage(new Rectangle(x, y, background.Width, background.Height));
+                        alternate = false;
+                    } else
+                    {
+                        background2.DrawImage(new Rectangle(x, y, background.Width, background.Height));
+                        alternate = true;
+                        Console.WriteLine("the other one is drawn");
+
+                    }
+
                 }
             }
 

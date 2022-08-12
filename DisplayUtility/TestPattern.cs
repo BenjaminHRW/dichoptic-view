@@ -13,7 +13,7 @@ namespace RejTech
     /// </summary>
     public class TestPattern // : Game
     {
-        Color TEXT_COLOR_DEFAULT = Color.White;
+        Color TEXT_COLOR_DEFAULT = Color.Black;
         const bool DISPLAY_BORDERLESS = true;
         const bool DISPLAY_FULLSCREEN = false;
         const bool DISPLAY_VSYNC = true;
@@ -29,7 +29,7 @@ namespace RejTech
 
         // Motion test;
         private Object thisLock = new Object();
-        private const int DEFAULT_FRAME_STEP = 4; //Interesting to change
+        private const int DEFAULT_FRAME_STEP = 0; //Interesting to change
         private Counter frames = new Counter();
         private int frameStep = DEFAULT_FRAME_STEP;
         private int posX = 0;
@@ -228,10 +228,10 @@ namespace RejTech
         {
             try
             {
-                background = new Drawing.Image(testGraphics, "testpatternwall"); //seems like it matters that testpatternwall has to be "background", I think this is because of the slight difference in dimension
+                background = new Drawing.Image(testGraphics, "testpatternL"); //seems like it matters that testpatternwall has to be "background", I think this is because of the slight difference in dimension
                 background2 = new Drawing.Image(testGraphics, "testpatternR");
                 font = new Drawing.Font(testGraphics, "MainText");
-                textStats = new Drawing.TextFormatter(testGraphics, font, new Vector2(60, 60), Color.White);
+                textStats = new Drawing.TextFormatter(testGraphics, font, new Vector2(60, 60), Color.Black);
                 Console.WriteLine("loaded test pattern");
             }
             catch (System.Exception e)
@@ -317,8 +317,9 @@ namespace RejTech
                 UpdateFrameStep(currentFrameRate);
             }
 
-            posX -= frameStep; //+=
-            while (posX < 0) posX += background.Width; //posX > 0 posX -= 
+            //posX -= frameStep; //+=
+            //while (posX < 0) posX += background.Width; //posX > 0 posX -= 
+            ///Makes it so that it doesnt change its posX (x position)
         }
 
         /// <summary>This is called when the game should draw itself.</summary>

@@ -1,7 +1,7 @@
 ## About
 
 This is another complementary project for the Eye Tracking Goggles. The goal of this project is to display 3D stimuli/objects on a 2D screen for realistic 3D testing of the eyes. The above code is a version of the software that handles stimulus(currently statically) and sends out signals for synchronization.
-For demo, check out [this](https://drive.google.com/drive/folders/1AyPt1Vvx-TJJVSS_gfBMiC9Yz2GjT9Hn).
+For demo, check out [some pictures and videos](https://drive.google.com/drive/folders/1AyPt1Vvx-TJJVSS_gfBMiC9Yz2GjT9Hn).
 
 ## Technology
 

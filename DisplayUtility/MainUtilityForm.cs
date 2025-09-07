@@ -7,6 +7,9 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using RejTech.Drawing;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace RejTech
 {
@@ -116,6 +119,7 @@ namespace RejTech
             launchTest = (options != "-notest") && !launchTray;
             InitializeComponent();
 
+            ConvertTestPatternsToXnb();
             this.Text = DEFAULT_APP_TITLE;
             this.trayIcon.Text = DEFAULT_APP_TITLE;
             this.BackColor = COLOR_BACKGROUND_MAIN;
@@ -125,6 +129,8 @@ namespace RejTech
             labelField4Value.ForeColor = COLOR_VALUES;
             labelField5Value.ForeColor = COLOR_VALUES;
             labelField6Value.ForeColor = COLOR_VALUES;
+
+            buttonTest.Text = "Start Test";
         }
 
         delegate void ShowScreenOnDisplayDelegate(DisplayInfo display);
@@ -204,7 +210,6 @@ namespace RejTech
                 testWasVisible = false;
             }
         }
-
         public static void TestThread(object display)
         {
             try
@@ -229,10 +234,131 @@ namespace RejTech
         }*/
 
         /// <summary>Form startup</summary>
+        private void ConvertTestPatternsToXnb()
+        {
+            try
+            {
+                // Define the paths for your test pattern files
+                string appDirectory = Path.GetDirectoryName(Application.ExecutablePath);
+                appDirectory = String.Concat(appDirectory, "\\Content");
+
+                // CHANGE THESE TO YOUR ACTUAL FILE NAMES
+                string[] patterns = { "Image1.jpg", "Image2.jpg" };
+
+                foreach (string pattern in patterns)
+                {
+                    string jpgPath = Path.Combine(appDirectory, pattern);
+                    string xnbPath = Path.ChangeExtension(jpgPath, ".xnb");
+
+                    // DEBUG: Show what files we're trying to convert
+                    MessageBox.Show($"Checking for: {jpgPath}\nExists: {File.Exists(jpgPath)}", "Debug Info");
+
+                    // Skip if XNB already exists and is newer than JPG
+                    if (File.Exists(xnbPath) && File.Exists(jpgPath))
+                    {
+                        if (File.GetLastWriteTime(xnbPath) > File.GetLastWriteTime(jpgPath))
+                        {
+                            MessageBox.Show($"Skipping {pattern} - XNB is already up to date", "Debug Info");
+                            continue; // XNB is up to date
+                        }
+                    }
+
+                    // Convert if JPG exists
+                    if (File.Exists(jpgPath))
+                    {
+                        ConvertJpgToXnb(jpgPath, xnbPath);
+                        MessageBox.Show($"Successfully converted {pattern} to XNB format", "Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"File not found: {jpgPath}", "File Missing");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Show detailed error
+                MessageBox.Show($"Error converting test patterns to XNB:\n{ex.Message}\n\nStack trace:\n{ex.StackTrace}",
+                    "Conversion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void ConvertJpgToXnb(string jpgPath, string xnbPath)
+        {
+            using (var bmp = new System.Drawing.Bitmap(jpgPath))
+            {
+                // Get BGRA data
+                var data = new byte[bmp.Width * bmp.Height * 4];
+                var bmpData = bmp.LockBits(
+                    new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height),
+                    System.Drawing.Imaging.ImageLockMode.ReadOnly,
+                    System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+                byte[] temp = new byte[data.Length];
+                Marshal.Copy(bmpData.Scan0, temp, 0, temp.Length);
+                bmp.UnlockBits(bmpData);
+
+                // Convert ARGB to BGRA
+                for (int i = 0; i < data.Length; i += 4)
+                {
+                    data[i] = temp[i];       // B
+                    data[i + 1] = temp[i + 1]; // G  
+                    data[i + 2] = temp[i + 2]; // R
+                    data[i + 3] = temp[i + 3]; // A
+                }
+
+                // Write XNB (same as before)
+                using (var w = new BinaryWriter(File.Create(xnbPath)))
+                {
+                    // Header
+                    w.Write((byte)'X');
+                    w.Write((byte)'N');
+                    w.Write((byte)'B');
+                    w.Write((byte)'w');
+                    w.Write((byte)5);
+                    w.Write((byte)0);
+
+                    long sizePos = w.BaseStream.Position;
+                    w.Write(0);
+
+                    // Type reader
+                    Write7Bit(w, 1);
+                    w.Write("Microsoft.Xna.Framework.Content.Texture2DReader, Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553");
+                    w.Write(0);
+                    Write7Bit(w, 0);
+                    Write7Bit(w, 1);
+
+                    // Texture data
+                    w.Write(0);
+                    w.Write(bmp.Width);
+                    w.Write(bmp.Height);
+                    w.Write(1);
+                    w.Write(data.Length);
+                    w.Write(data);
+
+                    // Update size
+                    long end = w.BaseStream.Position;
+                    w.BaseStream.Position = sizePos;
+                    w.Write((int)end);
+                }
+            }
+        }
+
+        private void Write7Bit(BinaryWriter w, int value)
+        {
+            while (value >= 0x80)
+            {
+                w.Write((byte)(value | 0x80));
+                value >>= 7;
+            }
+            w.Write((byte)value);
+        }
         private void StilityForm_Load(object sender, EventArgs e)
         {
             versionText = versionInfo.Major + "." + versionInfo.Minor + "." + versionInfo.Build;
             if (versionInfo.Revision > 0) versionText += "." + versionInfo.Revision;
+
+            ConvertTestPatternsToXnb();
 
             ClearMessage();
             EnableAdjustments(false);
@@ -1298,6 +1424,14 @@ namespace RejTech
                 buttonTest.Visible = false;
                 Thread.Sleep(50);
                 buttonTest.Visible = true;
+                //Changes Test UI to reflect Test State
+                if (TestVisible()){
+                    buttonTest.Text = "Stop Test";
+                }
+                else
+                {
+                    buttonTest.Text = "Start Test";
+                }
             }
         }
 
@@ -1320,5 +1454,15 @@ namespace RejTech
             }
             base.WndProc(ref message);
 	    }
+
+        private void sliderField5_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sliderField3_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,6 +4,11 @@ using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 using System;
 using RejTech.Drawing;
+using System.Diagnostics;
+using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace RejTech
 {
@@ -145,7 +150,6 @@ namespace RejTech
                 changedVisible = false;
             }
         }
-
         private void ShowScreenOnDisplay(DisplayInfo display)
         {
             if (display == null)
@@ -228,8 +232,10 @@ namespace RejTech
         {
             try
             {
-                background = new Drawing.Image(testGraphics, "testpatternL"); //seems like it matters that testpatternwall has to be "background", I think this is because of the slight difference in dimension
-                background2 = new Drawing.Image(testGraphics, "testpatternR");
+
+
+                background = new Drawing.Image(testGraphics, "Image1");
+                background2 = new Drawing.Image(testGraphics, "Image2");
                 font = new Drawing.Font(testGraphics, "MainText");
                 textStats = new Drawing.TextFormatter(testGraphics, font, new Vector2(60, 60), Color.Black);
                 Console.WriteLine("loaded test pattern");
@@ -243,7 +249,7 @@ namespace RejTech
 
             //ShowScreenOnDisplay(currentDisplay);
         }
-
+        // Add this method to the MainUtilityForm class:
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.

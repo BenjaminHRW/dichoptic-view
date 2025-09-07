@@ -18,7 +18,7 @@ namespace RejTech
 		public static readonly int WM_EXITEXISTINGAPP = Window.RegisterWindowMessage("WM_EXITEXISTINGAPP|" + AssemblyGUID);
 
 		/// <summary>Get this app's GUID</summary>
-		private static string AssemblyGUID
+		private static string AssemblyGUID //Ensures that there is only one instance of the application by giving each instance its own code
 		{
 			get
 			{
